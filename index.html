@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yarina | 媒体运营 & 内容创作</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* 让作品横向滚动 */
+        .works-grid {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            padding-bottom: 1rem;
+            scroll-snap-type: x mandatory;
+        }
+        .work-item {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+        }
+        /* 去掉原有grid布局冲突 */
+        .works-category-title {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav class="nav">
+    <div class="nav-container">
+        <a href="#" class="logo">Yarina</a>
+        <div class="nav-links">
+            <a href="#about">关于</a>
+            <a href="#projects">项目</a>
+            <a href="#media">媒体</a>
+            <a href="#works">作品</a>
+            <a href="#skills">技能</a>
+            <a href="#contact">联系</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero 区域 -->
+<header class="hero">
+    <div class="hero-content">
+        <img src="images/portrait.JPG" alt="张怡" class="hero-portrait">
+        <h1 class="hero-title">
+            <span class="name">张怡</span>
+            <span class="en-name">Yarina</span>
+        </h1>
+        <p class="hero-subtitle">媒体运营 & 内容创作</p>
+        <p class="hero-desc">专注于内容策划与用户增长</p>
+    </div>
+</header>
+
+<!-- 关于我 -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title">关于我</h2>
+        <div class="about-content">
+            <p class="about-text">
+                拥有丰富的媒体运营与内容创作经验，擅长通过数据驱动的策略进行用户增长与转化。
+                善于捕捉热点趋势，设计创新活动方案，实现品牌价值与商业目标的双赢。
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- 项目经历 -->
+<section id="projects" class="section section-gray">
+    <div class="container">
+        <h2 class="section-title">项目经历</h2>
+        <div class="projects-grid">
+            <article class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">沉浸式学习活动策划项目</h3>
+                    <span class="project-role">主要负责人</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-item">
+                        <h4>竞品分析</h4>
+                        <p>基于教育市场的内、外部环境分析，跟踪竞品在多渠道上的线上活动，梳理公司目前使用的运营策略、投入产出、用户满意度等模块，为后期运营、营销提供数据及策略支撑。</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>痛点诊断</h4>
+                        <p>围绕潜在用户存在的"自制力差""内容枯燥"等问题，结合时下热点，设计以电视剧"狂飙"为背景的答题闯关模式，提升潜在用户粘性；针对同期产品"同质化严重"等问题，提出《小学教育学》带学活动方案。</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>流程优化</h4>
+                        <p>从0-1搭建活动SOP（报名→登记→入群→发放资料→检测反馈），弥补以往用户因入群后没有资料而产生的"冷静期"，优化流程，提升用户活跃度和参与度。</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>跨部门协调</h4>
+                        <p>联动其他部门活动，完成信息传递及资源整合，推动活动进程，协同完成活动策划与推广，提高知名度。</p>
+                    </div>
+                </div>
+                <div class="project-results">
+                    <h4>项目成果</h4>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-number">100+</span>
+                            <span class="result-label">单活动拉新</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">500+</span>
+                            <span class="result-label">小红书涨粉</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">1w+</span>
+                            <span class="result-label">业绩转化</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- 自媒体矩阵 -->
+<section id="media" class="section">
+    <div class="container">
+        <h2 class="section-title">媒体运营</h2>
+
+        <!-- 账号矩阵 -->
+        <div class="media-section">
+            <h3 class="media-section-title">账号矩阵</h3>
+            <p class="media-section-desc">垂直领域账号矩阵运营</p>
+            <div class="accounts-showcase">
+                <a href="https://www.xiaohongshu.com/user/profile/629c194c00000000210244f8?xsec_token=AB015wy3ByuF5jFFEudxYgjZMOAacufY2-zt8FZvlTe6c%3D&xsec_source=pc_search" target="_blank" class="account-card">
+                    <div class="account-info">
+                        <span class="account-platform">小红书</span>
+                        <span class="account-name">小教考研丸丸学姐</span>
+                    </div>
+                </a>
+                <a href="https://www.xiaohongshu.com/user/profile/641903fe00000000120137e4?xsec_token=ABK6atRljGCveNcgCUGx5Zf0jVJx5t4etMu2x0Wl33p60%3D&xsec_source=pc_search" target="_blank" class="account-card">
+                    <div class="account-info">
+                        <span class="account-platform">小红书</span>
+                        <span class="account-name">考研丸小助</span>
+                    </div>
+                </a>
+                <a href="https://www.xiaohongshu.com/user/profile/6392b8670000000024014fb9?xsec_token=ABfOy_f0M11OET8ZCuBOnGepdhytubd9q8K6KKv55ciAc%3D&xsec_source=pc_search" target="_blank" class="account-card">
+                    <div class="account-info">
+                        <span class="account-platform">小红书</span>
+                        <span class="account-name">学前考研小太阳</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- 微博 -->
+        <div class="media-section">
+            <h3 class="media-section-title">其他平台</h3>
+            <div class="account-list-simple">
+                <a href="https://weibo.com/u/1786559310" target="_blank" class="account-item-simple">
+                    <span class="platform-badge">微博</span>
+                    <span class="account-name-simple">小学教育考研-丸丸老师</span>
+                    <span class="arrow-icon">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 自营账号（已移到微博下面） -->
+        <div class="media-section">
+            <h3 class="media-section-title">自营账号</h3>
+            <p class="media-section-desc">个人品牌内容创作</p>
+            <div class="accounts-showcase">
+                <a href="https://www.xiaohongshu.com/user/profile/5faf59dc000000000100b2d1?xsec_token=ABplyt_ro9dOADY4FEDqxg3w1S562cXch35T8sD-OcJwM%3D&xsec_source=pc_search" target="_blank" class="account-card account-card-featured">
+                    <div class="account-info">
+                        <span class="account-platform">小红书</span>
+                        <span class="account-name">死磕双下巴</span>
+                        <span class="account-tag">个人IP</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 作品展示 -->
+<section id="works" class="section section-gray">
+    <div class="container">
+        <h2 class="section-title">作品展示</h2>
+
+        <!-- 设计作品 -->
+        <div class="works-category">
+            <h3 class="works-category-title">设计作品</h3>
+            <div class="works-grid">
+                <div class="work-item">
+                    <img src="images/flurry-design.png" alt="Flurry品牌设计" class="work-img" loading="lazy">
+                    <div class="work-overlay">
+                        <span class="work-title">Flurry Brand Design</span>
+                        <span class="work-type">品牌设计</span>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img src="images/illustration.png" alt="卡通插画设计" class="work-img" loading="lazy">
+                    <div class="work-overlay">
+                        <span class="work-title">卡通插画</span>
+                        <span class="work-type">插画设计</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 视频作品 -->
+<div class="works-category">
+    <h3 class="works-category-title">视频作品</h3>
+    <div class="works-grid">
+        <!-- 第一个视频（原有） -->
+        <div class="work-item work-video">
+            <video src="images/demo-video.mp4" controls class="work-video-player"></video>
+            <div class="work-overlay work-overlay-video">
+                <span class="work-title">创意视频</span>
+                <span class="work-type">视频制作</span>
+            </div>
+        </div>
+        <!-- 第二个视频（新增） -->
+        <div class="work-item work-video">
+            <video src="images/Video 3.mp4" controls class="work-video-player"></video>
+            <div class="work-overlay work-overlay-video">
+                <span class="work-title">创意视频</span>
+                <span class="work-type">视频制作</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- 摄影作品 -->
+        <div class="works-category">
+            <h3 class="works-category-title">摄影作品</h3>
+            <div class="works-grid">
+                <div class="work-item">
+                    <img src="images/photography.jpg" alt="香港街头摄影" class="work-img" loading="lazy">
+                    <div class="work-overlay">
+                        <span class="work-title">香港街头</span>
+                        <span class="work-type">黑白摄影</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 技能 -->
+<section id="skills" class="section">
+    <div class="container">
+        <h2 class="section-title">技能</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3 class="skill-title">策略与分析能力</h3>
+                <ul class="skill-list">
+                    <li>用户增长策略</li>
+                    <li>数据分析与洞察</li>
+                    <li>竞品分析报告</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-title">内容与文案能力</h3>
+                <ul class="skill-list">
+                    <li>文案策划</li>
+                    <li>短视频脚本</li>
+                    <li>图文内容设计</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-title">运营与执行能力</h3>
+                <ul class="skill-list">
+                    <li>活动策划与执行</li>
+                    <li>内容运营</li>
+                    <li>社群运营</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3 class="skill-title">视觉与制作能力</h3>
+                <ul class="skill-list">
+                    <li>平面设计</li>
+                    <li>摄影摄像</li>
+                    <li>视频剪辑</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 联系方式 -->
+<section id="contact" class="section section-gray">
+    <div class="container">
+        <h2 class="section-title">联系方式</h2>
+        <div class="contact-content">
+            <a href="mailto:zyi202415@163.com" class="contact-item">
+                <span class="contact-label">邮箱</span>
+                <span class="contact-value">zyi202415@163.com</span>
+            </a>
+            <div class="contact-item">
+                <span class="contact-label">电话</span>
+                <span class="contact-value">18168040319</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 Yarina. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

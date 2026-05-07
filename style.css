@@ -1,0 +1,813 @@
+/* ==========================================
+   基础样式
+   ========================================== */
+:root {
+    --color-bg: #fafafa;
+    --color-bg-alt: #f5f5f5;
+    --color-text: #1a1a1a;
+    --color-text-light: #666;
+    --color-text-muted: #999;
+    --color-accent: #2d2d2d;
+    --color-border: #e5e5e5;
+    --font-main: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    /* 新增：防止页面横向溢出导致黑边 */
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   导航
+   ========================================== */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(250, 250, 250, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 400;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--color-text);
+}
+
+/* ==========================================
+   Hero（核心：提升层级+隔离溢出）
+   ========================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    /* 新增：限定定位上下文，防止被作品层覆盖 */
+    position: relative;
+    z-index: 100;
+    /* 新增：增加底部间距，彻底隔离作品区域 */
+    margin-bottom: 2rem;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-portrait {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.hero-title {
+    margin-bottom: 1.5rem;
+}
+
+.name {
+    display: block;
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.5rem;
+}
+
+.en-name {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-text-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.hero-desc {
+    font-size: 1rem;
+    color: var(--color-text-light);
+}
+
+/* ==========================================
+   通用 Section
+   ========================================== */
+.section {
+    padding: 6rem 2rem;
+    /* 新增：隔离section，防止溢出 */
+    position: relative;
+}
+
+.section-gray {
+    background-color: var(--color-bg-alt);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* ==========================================
+   关于我
+   ========================================== */
+.about-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text {
+    font-size: 1.125rem;
+    line-height: 1.9;
+    color: var(--color-text);
+}
+
+/* ==========================================
+   项目卡片
+   ========================================== */
+.projects-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--color-bg);
+    border-radius: 16px;
+    padding: 3rem;
+    border: 1px solid var(--color-border);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.project-role {
+    background: var(--color-accent);
+    color: var(--color-bg);
+    padding: 0.375rem 1rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.project-content {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.project-item h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+}
+
+.project-item p {
+    font-size: 0.9375rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+.project-results {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.project-results h4 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+}
+
+.result-item {
+    text-align: center;
+}
+
+.result-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.result-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin-top: 0.5rem;
+}
+
+/* ==========================================
+   自媒体
+   ========================================== */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.media-platform {
+    background: var(--color-bg-alt);
+    padding: 2.5rem;
+    border-radius: 16px;
+}
+
+.platform-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.account-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.account-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: var(--color-bg);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.account-item:hover {
+    border-color: var(--color-border);
+    transform: translateX(4px);
+}
+
+.account-name {
+    font-size: 0.9375rem;
+    font-weight: 400;
+}
+
+.account-arrow {
+    color: var(--color-text-muted);
+    transition: var(--transition);
+}
+
+.account-item:hover .account-arrow {
+    color: var(--color-text);
+    transform: translateX(4px);
+}
+
+/* ==========================================
+   技能
+   ========================================== */
+.skills-grid {
+    display: grid;
+    /* 修改为4列等宽布局，适配不同屏幕 */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    /* 可选：添加最大宽度，确保整体居中 */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    text-align: center;
+}
+
+.skill-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+}
+
+.skill-list li {
+    font-size: 0.9375rem;
+    color: var(--color-text-light);
+    padding: 0.75rem 1.25rem;
+    background: var(--color-bg);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+/* 响应式补充：小屏幕下自动适配 */
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+/* ==========================================
+   联系方式
+   ========================================== */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+}
+
+.contact-item:hover {
+    background: var(--color-bg-alt);
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.contact-value {
+    font-size: 1.125rem;
+    color: var(--color-text);
+}
+
+/* ==========================================
+   页脚
+   ========================================== */
+.footer {
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+}
+
+.footer p {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+/* ==========================================
+   响应式
+   ========================================== */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.8125rem;
+    }
+
+    .name {
+        font-size: 3rem;
+    }
+
+    .hero-portrait {
+        width: 140px;
+        height: 140px;
+    }
+
+    .en-name {
+        font-size: 1.25rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .section {
+        padding: 4rem 1.5rem;
+    }
+
+    .project-card {
+        padding: 2rem;
+    }
+
+    .project-title {
+        font-size: 1.25rem;
+    }
+
+    .result-number {
+        font-size: 2rem;
+    }
+
+    .media-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .media-platform {
+        padding: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* ==========================================
+   自媒体新版样式
+   ========================================== */
+.media-section {
+    margin-bottom: 4rem;
+}
+
+.media-section:last-child {
+    margin-bottom: 0;
+}
+
+.media-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.media-section-desc {
+    font-size: 0.9375rem;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+}
+
+.accounts-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.account-card {
+    background: var(--color-bg-alt);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid transparent;
+}
+
+.account-card:hover {
+    border-color: var(--color-border);
+    transform: translateY(-4px);
+}
+
+.account-card-featured {
+    max-width: 320px;
+    background: linear-gradient(135deg, var(--color-bg-alt) 0%, #f0f0f0 100%);
+}
+
+.account-img-wrapper {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    background: var(--color-bg);
+}
+
+.account-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.account-card:hover .account-img {
+    transform: scale(1.05);
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.account-platform {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    letter-spacing: 0.1em;
+}
+
+.account-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.account-tag {
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    border: 1px solid var(--color-border);
+}
+
+.account-list-simple {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.account-item-simple {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--color-bg-alt);
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.account-item-simple:hover {
+    border-color: var(--color-border);
+}
+
+.platform-badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-bg);
+    background: var(--color-accent);
+    padding: 0.375rem 0.75rem;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+}
+
+.account-name-simple {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    flex: 1;
+}
+
+.arrow-icon {
+    color: var(--color-text-muted);
+    transition: var(--transition);
+}
+
+.account-item-simple:hover .arrow-icon {
+    color: var(--color-text);
+    transform: translateX(4px);
+}
+
+/* ==========================================
+   作品展示（核心修复：消除黑边+文案溢出）
+   ========================================== */
+.works-category {
+    margin-bottom: 4rem;
+    /* 新增：隔离作品分类，防止溢出 */
+    position: relative;
+    z-index: 20;
+}
+
+.works-category:last-child {
+    margin-bottom: 0;
+}
+
+.works-category-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+/* 作品展示 - 横向滚动核心样式 */
+.works-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    /* 新增：强制隔离溢出，不影响其他区域 */
+    contain: layout paint;
+}
+
+/* 单个作品项（核心：限定定位上下文+隐藏溢出） */
+.work-item {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    /* 核心新增：限定悬浮层的定位上下文，防止溢出 */
+    position: relative;
+    /* 新增：背景色统一，避免黑边 */
+    background: var(--color-bg);
+}
+
+/* 视频容器比例 */
+.work-video {
+    aspect-ratio: 16/9;
+}
+
+.work-video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 新增：去除视频播放器自带黑边 */
+    border: none;
+    background: transparent;
+}
+
+.work-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.work-item:hover .work-img {
+    transform: scale(1.05);
+}
+
+/* 悬浮文案层（核心：限定在作品项内） */
+.work-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    opacity: 0;
+    transition: var(--transition);
+    /* 新增：强制不溢出 */
+    overflow: hidden;
+    z-index: 1;
+}
+
+.work-item:hover .work-overlay {
+    opacity: 1;
+}
+
+.work-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.work-type {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.7);
+}
+
+/* 视频作品悬浮层 */
+.work-overlay-video {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
+}
+
+/* ==========================================
+   响应式补充
+   ========================================== */
+@media (max-width: 768px) {
+    .accounts-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .account-card-featured {
+        max-width: 100%;
+    }
+
+    .works-grid {
+        /* 修正：小屏幕下保持flex横向滚动，删除错误的grid布局 */
+        display: flex;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 0.75rem;
+        font-size: 0.75rem;
+    }
+
+    .media-section {
+        margin-bottom: 3rem;
+    }
+
+    .works-category {
+        margin-bottom: 3rem;
+    }
+}
